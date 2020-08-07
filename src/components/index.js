@@ -1,3 +1,5 @@
 import Tabs from './Tabs';
+import Home from './Home';
+import Header from './Header';
 
-export {Tabs};
+export {Tabs, Home, Header};

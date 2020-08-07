@@ -1,8 +1,11 @@
 import React from 'react';
-import {Text} from 'react-native';
+import {Text, LogBox} from 'react-native';
 import {Provider} from 'react-redux';
 import {store} from './src/state/store';
 import Index from './src/routers';
+
+// Ignore all log notifications:
+LogBox.ignoreAllLogs();
 
 //ios font size değişse de fontlar değişmesin diye
 if (Text.defaultProps == null) {

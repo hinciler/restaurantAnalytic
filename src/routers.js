@@ -1,7 +1,7 @@
 import React from 'react';
 import {Platform} from 'react-native';
 import {Scene, Router, Overlay, Modal} from 'react-native-router-flux';
-import {Tabs} from 'components';
+import {Tabs, Home} from 'components';
 
 const stateHandler = (prevState, newState, action) => {
   // console.log('onStateChange: ACTION:', action);
@@ -14,7 +14,8 @@ const router = () => (
   <Router onStateChange={stateHandler} uriPrefix={prefix}>
     <Overlay key="overlay" panHandlers={null}>
       <Modal key="modal" hideNavBar>
-        <Scene component={Tabs} key="users" initial />
+        <Scene component={Tabs} key="tabs" />
+        <Scene component={Home} key="home" initial />
       </Modal>
     </Overlay>
   </Router>
