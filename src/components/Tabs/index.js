@@ -7,7 +7,7 @@ import {colors} from 'config';
 import {styles} from './style';
 import {Icon} from 'react-native-elements';
 const dummy = require('./dummy.json');
-const {prefixBtns} = dummy;
+const {prefixBtns, textContainer} = dummy;
 
 export default function () {
   const [selected, setSelected] = React.useState(new Map());
@@ -32,7 +32,7 @@ export default function () {
     [oldId, selected],
   );
   return (
-    <View>
+    <View style={{flex: 1, backgroundColor: 'white', padding: 10}}>
       <Header rightIconName="close" onRightPress={Actions.pop} />
       <View style={styles.orderGroupTag}>
         {prefixBtns.map((item, index) => (
@@ -70,6 +70,10 @@ export default function () {
             </View>
           </TouchableOpacity>
         ))}
+      </View>
+
+      <View style={styles.orderTagList}>
+        <Text style={{color: colors.btnTxtClr}}>{textContainer[oldId]}</Text>
       </View>
     </View>
   );

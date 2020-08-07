@@ -18,6 +18,12 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'center',
-    marginBottom: 9,
+    marginBottom: 4,
+  },
+  orderTagList: {
+    borderWidth: 1,
+    borderColor: colors.grey,
+    backgroundColor: 'white',
+    padding: 10,
   },
 });
