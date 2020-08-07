@@ -1,0 +1,25 @@
+{
+    "buttons" : ["Burger Menus", "Burger Drink", "Burger Modifier", "Burger Type", "Burger Cheese"],
+    "prefixBtns" :[
+        {
+            "name": "Home",
+            "icon": "home"
+        },
+        {
+            "name": "Profile",
+            "icon": "person"
+        },
+        {
+            "name": "Messages",
+            "icon": "email"
+        },
+        {
+            "name": "Setting",
+            "icon": "settings"
+        },
+        {
+            "name": "Contact",
+            "icon": "camera"
+        }
+    ]
+}

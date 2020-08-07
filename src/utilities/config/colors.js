@@ -35,6 +35,8 @@ const light = {
   border: '#d8d8d8',
   border2: '#f78a09',
   btnColor: '#4388d6',
+  activeBtnClr: '#007eff',
+  btnTxtClr: '#7792b1',
 
   // Darker color if hairlineWidth is not thin enough
   divider: StyleSheet.hairlineWidth < 1 ? '#bcbbc1' : 'rgba(0, 0, 0, 0.12)',
