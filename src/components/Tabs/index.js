@@ -32,48 +32,52 @@ export default function () {
     [oldId, selected],
   );
   return (
-    <View style={{flex: 1, backgroundColor: 'white', padding: 10}}>
+    <View style={{flex: 1}}>
       <Header rightIconName="close" onRightPress={Actions.pop} />
-      <View style={styles.orderGroupTag}>
-        {prefixBtns.map((item, index) => (
-          <TouchableOpacity
-            key={index}
-            onPress={debounce(() => onSelectTab(index))}
-            style={[
-              styles.wrapButton,
-              {
-                backgroundColor: selected.get(index)
-                  ? colors.activeBtnClr
-                  : colors.white,
-                borderBottomLeftRadius: index === 0 || index === 3 ? 2 : 0,
-                borderTopLeftRadius: index === 0 || index === 3 ? 2 : 0,
-                borderBottomRightRadius:
-                  index === prefixBtns.length - 1 || index === 2 ? 2 : 0,
-                borderTopRightRadius:
-                  index === prefixBtns.length - 1 || index === 2 ? 2 : 0,
-                marginTop: 4,
-              },
-            ]}>
-            <View style={{flexDirection: 'row'}}>
-              <Icon
-                name={item.icon}
-                size={16}
-                color={selected.get(index) ? colors.white : colors.btnTxtClr}
-                style={{marginRight: 5}}
-              />
-              <Text
-                style={{
-                  color: selected.get(index) ? colors.white : colors.btnTxtClr,
-                }}>
-                {item.name}
-              </Text>
-            </View>
-          </TouchableOpacity>
-        ))}
-      </View>
+      <View style={{flex: 1, backgroundColor: 'white', padding: 10}}>
+        <View style={styles.tabBtn}>
+          {prefixBtns.map((item, index) => (
+            <TouchableOpacity
+              key={index}
+              onPress={debounce(() => onSelectTab(index))}
+              style={[
+                styles.wrapButton,
+                {
+                  backgroundColor: selected.get(index)
+                    ? colors.activeBtnClr
+                    : colors.white,
+                  borderBottomLeftRadius: index === 0 || index === 3 ? 2 : 0,
+                  borderTopLeftRadius: index === 0 || index === 3 ? 2 : 0,
+                  borderBottomRightRadius:
+                    index === prefixBtns.length - 1 || index === 2 ? 2 : 0,
+                  borderTopRightRadius:
+                    index === prefixBtns.length - 1 || index === 2 ? 2 : 0,
+                  marginTop: 4,
+                },
+              ]}>
+              <View style={{flexDirection: 'row'}}>
+                <Icon
+                  name={item.icon}
+                  size={16}
+                  color={selected.get(index) ? colors.white : colors.btnTxtClr}
+                  style={{marginRight: 5}}
+                />
+                <Text
+                  style={{
+                    color: selected.get(index)
+                      ? colors.white
+                      : colors.btnTxtClr,
+                  }}>
+                  {item.name}
+                </Text>
+              </View>
+            </TouchableOpacity>
+          ))}
+        </View>
 
-      <View style={styles.orderTagList}>
-        <Text style={{color: colors.btnTxtClr}}>{textContainer[oldId]}</Text>
+        <View style={styles.tabBtnContainer}>
+          <Text style={{color: colors.btnTxtClr}}>{textContainer[oldId]}</Text>
+        </View>
       </View>
     </View>
   );

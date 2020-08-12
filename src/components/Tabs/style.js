@@ -13,14 +13,14 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     padding: 2,
   },
-  orderGroupTag: {
+  tabBtn: {
     marginTop: 5,
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'center',
     marginBottom: 4,
   },
-  orderTagList: {
+  tabBtnContainer: {
     borderWidth: 1,
     borderColor: colors.grey,
     backgroundColor: 'white',

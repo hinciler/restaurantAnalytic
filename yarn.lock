@@ -682,7 +682,7 @@
     core-js-pure "^3.0.0"
     regenerator-runtime "^0.13.4"
 
-"@babel/runtime@^7.0.0", "@babel/runtime@^7.5.5", "@babel/runtime@^7.6.0", "@babel/runtime@^7.6.3", "@babel/runtime@^7.8.4":
+"@babel/runtime@^7.0.0", "@babel/runtime@^7.10.1", "@babel/runtime@^7.5.5", "@babel/runtime@^7.6.0", "@babel/runtime@^7.6.3", "@babel/runtime@^7.8.4":
   version "7.11.2"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.11.2.tgz#f549c13c754cc40b87644b9fa9f09a6a95fe0736"
   integrity sha512-TeWkU52so0mPtDcaCTxNBI/IHiz0pZgr8VEFqXFtZWpYD08ZB6FaSwVAS8MKRQAP3bYKiVjwysOJgMFY28o6Tw==
@@ -2386,6 +2386,51 @@ csstype@^3.0.2:
   resolved "https://registry.yarnpkg.com/csstype/-/csstype-3.0.2.tgz#ee5ff8f208c8cd613b389f7b222c9801ca62b3f7"
   integrity sha512-ofovWglpqoqbfLNOTBNZLSbMuGrblAf1efvvArGKOZMBrIoJeu5UsAipQolkijtyQx5MtAzT/J9IHj/CEY1mJw==
 
+"d3-array@1.2.0 - 2":
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/d3-array/-/d3-array-2.5.0.tgz#d3f3043aabb75a17e2e78e3723aff4004ede3c5b"
+  integrity sha512-U+CrYn19GmiKeI9qU1RLV1p5ZodBKXw64k9Z3Id6d11LLuZ4JdyCnMT6W/2b84bvqEMFU15zg/JC3/oRYTanVg==
+
+d3-color@1:
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/d3-color/-/d3-color-1.4.1.tgz#c52002bf8846ada4424d55d97982fef26eb3bc8a"
+  integrity sha512-p2sTHSLCJI2QKunbGb7ocOh7DgTAn8IrLx21QRc/BSnodXM4sv6aLQlnfpvehFMLZEfBc6g9pH9SWQccFYfJ9Q==
+
+d3-format@1:
+  version "1.4.4"
+  resolved "https://registry.yarnpkg.com/d3-format/-/d3-format-1.4.4.tgz#356925f28d0fd7c7983bfad593726fce46844030"
+  integrity sha512-TWks25e7t8/cqctxCmxpUuzZN11QxIA7YrMbram94zMQ0PXjE4LVIMe/f6a4+xxL8HQ3OsAFULOINQi1pE62Aw==
+
+d3-interpolate@^1.2.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/d3-interpolate/-/d3-interpolate-1.4.0.tgz#526e79e2d80daa383f9e0c1c1c7dcc0f0583e987"
+  integrity sha512-V9znK0zc3jOPV4VD2zZn0sDhZU3WAE2bmlxdIwwQPPzPjvyLkd8B3JUVdS1IDUFDkWZ72c9qnv1GK2ZagTZ8EA==
+  dependencies:
+    d3-color "1"
+
+d3-scale@^3.2.1:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/d3-scale/-/d3-scale-3.2.1.tgz#da1684adce7261b4bc7a76fe193d887f0e909e69"
+  integrity sha512-huz5byJO/6MPpz6Q8d4lg7GgSpTjIZW/l+1MQkzKfu2u8P6hjaXaStOpmyrD6ymKoW87d2QVFCKvSjLwjzx/rA==
+  dependencies:
+    d3-array "1.2.0 - 2"
+    d3-format "1"
+    d3-interpolate "^1.2.0"
+    d3-time "1"
+    d3-time-format "2"
+
+d3-time-format@2:
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/d3-time-format/-/d3-time-format-2.2.3.tgz#0c9a12ee28342b2037e5ea1cf0b9eb4dd75f29cb"
+  integrity sha512-RAHNnD8+XvC4Zc4d2A56Uw0yJoM7bsvOlJR33bclxq399Rak/b9bhvu/InjxdWhPtkgU53JJcleJTGkNRnN6IA==
+  dependencies:
+    d3-time "1"
+
+d3-time@1:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/d3-time/-/d3-time-1.1.0.tgz#b1e19d307dae9c900b7e5b25ffc5dcc249a8a0f1"
+  integrity sha512-Xh0isrZ5rPYYdqhAVk8VLnMEidhz5aP7htAADH6MfzgmmicPkTo8LhkLxci61/lCB7n7UmE3bN0leRt+qvkLxA==
+
 dashdash@^1.12.0:
   version "1.14.1"
   resolved "https://registry.yarnpkg.com/dashdash/-/dashdash-1.14.1.tgz#853cfa0f7cbe2fed5de20326b8dd581035f6e2f0"
@@ -3473,6 +3518,13 @@ i18n-js@^3.7.1:
   resolved "https://registry.yarnpkg.com/i18n-js/-/i18n-js-3.7.1.tgz#c70de6a64dc0ad5d2b6273eecfac636e5ed0421a"
   integrity sha512-xrRzCeda5ZC0u0yRN+dMdidtda0N+f7t7Pek0ajWb+iyKqSGdrMmuBtbNpWJWY5N4Th0cxbp/BR57zSPdrM3Rw==
 
+i18next@^19.6.3:
+  version "19.6.3"
+  resolved "https://registry.yarnpkg.com/i18next/-/i18next-19.6.3.tgz#ce2346161b35c4c5ab691b0674119c7b349c0817"
+  integrity sha512-eYr98kw/C5z6kY21ti745p4IvbOJwY8F2T9tf/Lvy5lFnYRqE45+bppSgMPmcZZqYNT+xO0N0x6rexVR2wtZZQ==
+  dependencies:
+    "@babel/runtime" "^7.10.1"
+
 iconv-lite@0.4.24, iconv-lite@^0.4.17, iconv-lite@^0.4.24:
   version "0.4.24"
   resolved "https://registry.yarnpkg.com/iconv-lite/-/iconv-lite-0.4.24.tgz#2022b4b25fbddc21d2f524974a474aafe733908b"
@@ -3610,6 +3662,11 @@ internal-slot@^1.0.2:
     es-abstract "^1.17.0-next.1"
     has "^1.0.3"
     side-channel "^1.0.2"
+
+intl@^1.2.5:
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/intl/-/intl-1.2.5.tgz#82244a2190c4e419f8371f5aa34daa3420e2abde"
+  integrity sha1-giRKIZDE5Bn4Nx9ao02qNCDiq94=
 
 invariant@^2.2.4:
   version "2.2.4"
@@ -5796,6 +5853,11 @@ react-lifecycles-compat@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
+
+react-native-device-info@^5.6.3:
+  version "5.6.3"
+  resolved "https://registry.yarnpkg.com/react-native-device-info/-/react-native-device-info-5.6.3.tgz#8b964866fc538bcfb82e25ad88f872139d7a591d"
+  integrity sha512-fmaXRjG0NW9FAOdOD86cmjgoxA/2I0lBq1NZmxQ2sgElyRjLxZLtuJn/QpP8hmFeTlKFDSZpSDvEnB+UUihcmw==
 
 react-native-elements@^2.1.0:
   version "2.1.0"

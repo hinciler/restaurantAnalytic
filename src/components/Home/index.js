@@ -11,6 +11,11 @@ const tabs = () => {
       <Button
         onPress={debounce(() => Actions.tabs())}
         title={'Tabs'}
+        style={{width: 160, marginBottom: 15}}
+      />
+      <Button
+        onPress={debounce(() => Actions.dateRange())}
+        title={'Date Range'}
         style={{width: 160}}
       />
     </SafeAreaView>
