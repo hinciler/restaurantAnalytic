@@ -16,7 +16,7 @@ const router = () => (
       <Modal key="modal" hideNavBar>
         <Scene component={Tabs} key="tabs" />
         <Scene component={Home} key="home" initial />
-        <Scene component={DateRange} key="dateRange" />
+        <Scene component={DateRange} key="dateRange" initial />
       </Modal>
     </Overlay>
   </Router>

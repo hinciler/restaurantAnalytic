@@ -8,11 +8,9 @@ import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5';
 
 const DEMO_OPTIONS_1 = [
   'Today',
-  'Yesterday',
-  'Last 7 Days',
-  'Last 30 Days',
+  'This Week',
   'This Month',
-  'Last Month',
+  'Last 30 Days',
   'Custom Range',
 ];
 
