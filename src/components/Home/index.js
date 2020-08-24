@@ -18,10 +18,16 @@ const tabs = () => {
         title={'Date Range'}
         style={{width: 160, marginBottom: 15}}
       />
+
       <Button
         onPress={debounce(() => Actions.selectBox())}
         title={'Select Box'}
-        style={{width: 160}}
+        style={{width: 160, marginBottom: 15}}
+      />
+      <Button
+        onPress={debounce(() => Actions.dataTable())}
+        title={'Date Table'}
+        style={{width: 160, marginBottom: 15}}
       />
     </SafeAreaView>
   );

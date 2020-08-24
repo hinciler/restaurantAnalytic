@@ -1,0 +1,27 @@
+{
+    "containerHeader": [
+        "#",
+        "First Name",
+        "Last Name",
+        "Username"
+    ]
+    ,
+    "containerItems": [
+        {
+            "firstName": "Nigam",
+            "lastName": "Eichmann",
+            "nickName" : "@Sonu"
+        },
+        {
+            "firstName": "Deshmukh",
+            "lastName": "Prohaska",
+            "nickName" : "@Genelia"
+        },
+        {
+            "firstName": "Roshan",
+            "lastName": "Rogahn",
+            "nickName" : "@Hritik"
+        }
+
+    ]
+}

@@ -4,5 +4,6 @@ import Header from './Header';
 import DateRange from './DateRange';
 import ModalDropdown from './ModalDropdown';
 import SelectBox from './SelectBox';
+import DataTable from './DataTable';
 
-export {Tabs, Home, Header, DateRange, ModalDropdown, SelectBox};
+export {Tabs, Home, Header, DateRange, ModalDropdown, SelectBox, DataTable};
