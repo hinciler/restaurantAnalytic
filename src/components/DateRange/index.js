@@ -3,8 +3,8 @@ import {StyleSheet, Text, View} from 'react-native';
 import {Header, ModalDropdown} from 'components';
 import {Actions} from 'react-native-router-flux';
 import {styles} from './style';
-import {Button, Icon} from 'react-native-elements';
 import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5';
+import {DateRange} from '../../helpers/constants';
 
 const DEMO_OPTIONS_1 = [
   'Today',
@@ -23,6 +23,7 @@ export default function () {
         <ModalDropdown
           style={styles.dropdown_3}
           options={DEMO_OPTIONS_1}
+          modalType={DateRange}
           defaultValue={
             <View
               style={{

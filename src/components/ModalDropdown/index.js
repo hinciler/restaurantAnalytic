@@ -13,7 +13,7 @@ import {
 } from 'react-native';
 import moment from 'moment';
 import DateTimePickerModal from 'react-native-modal-datetime-picker';
-
+import {DateRange, SelectBox} from '../../helpers/constants';
 import PropTypes from 'prop-types';
 import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5';
 export const TODAY_INDEX = 0;
@@ -52,7 +52,10 @@ export default class ModalDropdown extends PureComponent {
       endDate,
       isStartDatePickerVisible,
     } = this.state;
-    const {defaultIndex, defaultValue, options} = nextProps;
+    const {defaultIndex, defaultValue, options, modalType} = nextProps;
+    if (modalType === SelectBox) {
+      this.setState({selectedIndex: 0});
+    }
     buttonText = this.nextValue == null ? buttonText : this.nextValue;
     selectedIndex = this.nextIndex == null ? selectedIndex : this.nextIndex;
     if (selectedIndex < 0) {
@@ -63,35 +66,37 @@ export default class ModalDropdown extends PureComponent {
     }
     this.nextValue = null;
     this.nextIndex = null;
-    if (selectedIndex === TODAY_INDEX) {
-      const date =
-        moment().format('DD.MM.YYYY') + '-' + moment().format('DD.MM.YYYY');
-      this.setState({buttonText: date});
-    } else if (selectedIndex === WEEK_INDEX) {
-      const date =
-        moment().startOf('week').format('DD.MM.YYYY') +
-        '-' +
-        moment().format('DD.MM.YYYY');
-      this.setState({buttonText: date});
-    } else if (selectedIndex === MONTH_INDEX) {
-      const date =
-        moment().startOf('month').format('DD.MM.YYYY') +
-        '-' +
-        moment().format('DD.MM.YYYY');
-      this.setState({buttonText: date});
-    } else if (selectedIndex === DAYS_30_INDEX) {
-      const date =
-        moment().subtract(30, 'days').format('DD.MM.YYYY') +
-        '-' +
-        moment().format('DD.MM.YYYY');
-      this.setState({buttonText: date});
-    } else if (selectedIndex === TIME_INDEX) {
-      this.setState({isStartDatePickerVisible: true});
-      if (startDate === null) {
-        this.setState({buttonText: 'Please Enter Date'});
-      } else {
-        const date = startDate + '-' + endDate;
+    if (modalType === DateRange) {
+      if (selectedIndex === TODAY_INDEX) {
+        const date =
+          moment().format('DD.MM.YYYY') + '-' + moment().format('DD.MM.YYYY');
         this.setState({buttonText: date});
+      } else if (selectedIndex === WEEK_INDEX) {
+        const date =
+          moment().startOf('week').format('DD.MM.YYYY') +
+          '-' +
+          moment().format('DD.MM.YYYY');
+        this.setState({buttonText: date});
+      } else if (selectedIndex === MONTH_INDEX) {
+        const date =
+          moment().startOf('month').format('DD.MM.YYYY') +
+          '-' +
+          moment().format('DD.MM.YYYY');
+        this.setState({buttonText: date});
+      } else if (selectedIndex === DAYS_30_INDEX) {
+        const date =
+          moment().subtract(30, 'days').format('DD.MM.YYYY') +
+          '-' +
+          moment().format('DD.MM.YYYY');
+        this.setState({buttonText: date});
+      } else if (selectedIndex === TIME_INDEX) {
+        this.setState({isStartDatePickerVisible: true});
+        if (startDate === null) {
+          this.setState({buttonText: 'Please Enter Date'});
+        } else {
+          const date = startDate + '-' + endDate;
+          this.setState({buttonText: date});
+        }
       }
     }
 
@@ -184,7 +189,7 @@ export default class ModalDropdown extends PureComponent {
                 name={'sort-down'}
                 color={'#475F7B'}
                 size={14}
-                style={{marginLeft: 5, marginBottom: 5}}
+                style={{marginLeft: 5, marginBottom: 5, alignItems: 'flex-end'}}
               />
             )}
           </View>
@@ -347,6 +352,7 @@ export default class ModalDropdown extends PureComponent {
       selectedIndex,
       dropdownTextStyle,
       dropdownTextHighlightStyle,
+      modalType,
     } = this.props;
     const key = item.index;
     const name = item.item;
@@ -358,22 +364,37 @@ export default class ModalDropdown extends PureComponent {
         styles.rowText,
         dropdownTextStyle,
         highlighted && dropdownTextHighlightStyle,
-        {color: highlightedState ? '#fff' : '#666666'},
+        {
+          color: highlightedState
+            ? modalType === DateRange
+              ? '#fff'
+              : '#5949d6'
+            : '#666666',
+        },
       ],
     };
     const row = <Text {...textProps}>{name}</Text>;
-
-    const preservedProps = {
-      onPress: this.onRowPress(item, key, highlightRow),
-      style: {
-        borderWidth: 1,
-        borderColor: highlightedState ? '#5949d6' : '#f5f5f5',
-        borderRadius: 60,
-        backgroundColor: highlightedState ? '#5949d6' : '#f5f5f5',
-        margin: 5,
-        justifyContent: 'center',
-      },
-    };
+    const preservedProps =
+      modalType === DateRange
+        ? {
+            onPress: this.onRowPress(item, key, highlightRow),
+            style: {
+              borderWidth: 1,
+              borderColor: highlightedState ? '#5949d6' : '#f5f5f5',
+              borderRadius: 60,
+              backgroundColor: highlightedState ? '#5949d6' : '#f5f5f5',
+              margin: 5,
+              justifyContent: 'center',
+            },
+          }
+        : {
+            onPress: this.onRowPress(item, key, highlightRow),
+            style: {
+              backgroundColor: highlightedState ? '#d5dfea' : '#fff',
+              padding: 4,
+              borderRadius: 10,
+            },
+          };
 
     return <TouchableHighlight {...preservedProps}>{row}</TouchableHighlight>;
   };
@@ -472,12 +493,11 @@ export default class ModalDropdown extends PureComponent {
 
 const styles = StyleSheet.create({
   button: {
-    justifyContent: 'center',
     flexDirection: 'row',
-    alignItems: 'center',
+    justifyContent: 'space-between',
   },
   buttonText: {
-    fontSize: 13,
+    fontSize: 14,
     color: '#475F7B',
   },
   modal: {

@@ -1,5 +1,4 @@
 import {StyleSheet} from 'react-native';
-import {colors} from 'config';
 
 export const styles = StyleSheet.create({
   dropdown_3: {
@@ -10,9 +9,9 @@ export const styles = StyleSheet.create({
     borderRadius: 60,
     backgroundColor: '#e6e6e6',
   },
-  dropdown_3_dropdownTextStyle: {
-    backgroundColor: '#f5f5f5',
-    color: '#666666',
-    padding: 3,
+  dropdown_2_dropdown: {
+    width: 180,
+    marginLeft: -10,
+    marginTop: 3,
   },
 });
