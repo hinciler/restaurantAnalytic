@@ -5,5 +5,15 @@ import DateRange from './DateRange';
 import ModalDropdown from './ModalDropdown';
 import SelectBox from './SelectBox';
 import DataTable from './DataTable';
+import InfoBox from './InfoBox';
 
-export {Tabs, Home, Header, DateRange, ModalDropdown, SelectBox, DataTable};
+export {
+  Tabs,
+  Home,
+  Header,
+  DateRange,
+  ModalDropdown,
+  SelectBox,
+  DataTable,
+  InfoBox,
+};

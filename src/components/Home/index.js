@@ -29,6 +29,11 @@ const tabs = () => {
         title={'Date Table'}
         style={{width: 160, marginBottom: 15}}
       />
+      <Button
+        onPress={debounce(() => Actions.infoBox())}
+        title={'Info Box'}
+        style={{width: 160, marginBottom: 15}}
+      />
     </SafeAreaView>
   );
 };

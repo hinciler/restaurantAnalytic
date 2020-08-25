@@ -1,7 +1,7 @@
 import React from 'react';
 import {Platform} from 'react-native';
 import {Scene, Router, Overlay, Modal} from 'react-native-router-flux';
-import {Tabs, Home, DateRange, SelectBox, DataTable} from 'components';
+import {Tabs, Home, DateRange, SelectBox, DataTable, InfoBox} from 'components';
 
 const stateHandler = (prevState, newState, action) => {
   // console.log('onStateChange: ACTION:', action);
@@ -19,6 +19,7 @@ const router = () => (
         <Scene component={DateRange} key="dateRange" />
         <Scene component={SelectBox} key="selectBox" />
         <Scene component={DataTable} key="dataTable" />
+        <Scene component={InfoBox} key="infoBox" />
       </Modal>
     </Overlay>
   </Router>
