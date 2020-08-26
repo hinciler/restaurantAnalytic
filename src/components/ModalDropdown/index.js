@@ -13,7 +13,7 @@ import {
 } from 'react-native';
 import moment from 'moment';
 import DateTimePickerModal from 'react-native-modal-datetime-picker';
-import {DateRange, SelectBox} from '../../helpers/constants';
+import {DateRange, SelectBox, RightMenu} from '../../helpers/constants';
 import PropTypes from 'prop-types';
 import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5';
 export const TODAY_INDEX = 0;
@@ -171,9 +171,15 @@ export default class ModalDropdown extends PureComponent {
   };
 
   renderButton() {
-    const {disabled, accessible, children, textStyle} = this.props;
+    const {disabled, accessible, children, textStyle, modalType} = this.props;
     const {buttonText, selectedIndex} = this.state;
-    return (
+    return modalType === RightMenu ? (
+      <TouchableOpacity
+        ref={(button) => (this.button = button)}
+        onPress={this.onButtonPress}>
+        <FontAwesome5Icon name={'user'} color={'#000'} size={30} />
+      </TouchableOpacity>
+    ) : (
       <TouchableOpacity
         ref={(button) => (this.button = button)}
         disabled={disabled}
@@ -368,12 +374,22 @@ export default class ModalDropdown extends PureComponent {
           color: highlightedState
             ? modalType === DateRange
               ? '#fff'
-              : '#5949d6'
+              : modalType === SelectBox
+              ? '#5949d6'
+              : '#666666'
             : '#666666',
         },
       ],
     };
-    const row = <Text {...textProps}>{name}</Text>;
+    const row =
+      modalType === RightMenu ? (
+        <View style={{padding: 3, flexDirection: 'row', alignItems: 'center'}}>
+          <FontAwesome5Icon name={'user'} />
+          <Text {...textProps}> {name}</Text>
+        </View>
+      ) : (
+        <Text {...textProps}>{name}</Text>
+      );
     const preservedProps =
       modalType === DateRange
         ? {
@@ -387,12 +403,20 @@ export default class ModalDropdown extends PureComponent {
               justifyContent: 'center',
             },
           }
-        : {
+        : modalType === SelectBox
+        ? {
             onPress: this.onRowPress(item, key, highlightRow),
             style: {
               backgroundColor: highlightedState ? '#d5dfea' : '#fff',
               padding: 4,
               borderRadius: 10,
+            },
+          }
+        : {
+            onPress: this.onRowPress(item, key, highlightRow),
+            style: {
+              backgroundColor: '#fff',
+              padding: 4,
             },
           };
 

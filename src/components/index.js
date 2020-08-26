@@ -6,6 +6,7 @@ import ModalDropdown from './ModalDropdown';
 import SelectBox from './SelectBox';
 import DataTable from './DataTable';
 import InfoBox from './InfoBox';
+import RightMenu from './RightMenu';
 
 export {
   Tabs,
@@ -16,4 +17,5 @@ export {
   SelectBox,
   DataTable,
   InfoBox,
+  RightMenu,
 };

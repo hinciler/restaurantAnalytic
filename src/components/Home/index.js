@@ -34,6 +34,11 @@ const tabs = () => {
         title={'Info Box'}
         style={{width: 160, marginBottom: 15}}
       />
+      <Button
+        onPress={debounce(() => Actions.rightMenu())}
+        title={'Right Menu'}
+        style={{width: 160, marginBottom: 15}}
+      />
     </SafeAreaView>
   );
 };
