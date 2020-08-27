@@ -7,6 +7,7 @@ import SelectBox from './SelectBox';
 import DataTable from './DataTable';
 import InfoBox from './InfoBox';
 import RightMenu from './RightMenu';
+import Slider from './Slider';
 
 export {
   Tabs,
@@ -18,4 +19,5 @@ export {
   DataTable,
   InfoBox,
   RightMenu,
+  Slider,
 };

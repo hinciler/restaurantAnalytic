@@ -39,6 +39,11 @@ const tabs = () => {
         title={'Right Menu'}
         style={{width: 160, marginBottom: 15}}
       />
+      <Button
+        onPress={debounce(() => Actions.slider())}
+        title={'Slider'}
+        style={{width: 160, marginBottom: 15}}
+      />
     </SafeAreaView>
   );
 };

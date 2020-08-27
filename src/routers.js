@@ -9,6 +9,7 @@ import {
   DataTable,
   InfoBox,
   RightMenu,
+  Slider,
 } from 'components';
 
 const stateHandler = (prevState, newState, action) => {
@@ -29,6 +30,7 @@ const router = () => (
         <Scene component={DataTable} key="dataTable" />
         <Scene component={InfoBox} key="infoBox" />
         <Scene component={RightMenu} key="rightMenu" />
+        <Scene component={Slider} key="slider" />
       </Modal>
     </Overlay>
   </Router>

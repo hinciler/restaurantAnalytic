@@ -12,6 +12,7 @@
   "dependencies": {
     "@react-native-community/async-storage": "^1.11.0",
     "@react-native-community/datetimepicker": "^3.0.0",
+    "@react-native-community/slider": "^3.0.3",
     "axios": "^0.19.2",
     "d3-scale": "^3.2.1",
     "i18n-js": "^3.7.1",
