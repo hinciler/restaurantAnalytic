@@ -11,38 +11,43 @@ const tabs = () => {
       <Button
         onPress={debounce(() => Actions.tabs())}
         title={'Tabs'}
-        style={{width: 160, marginBottom: 15}}
+        buttonStyle={{width: 160, marginBottom: 15}}
       />
       <Button
         onPress={debounce(() => Actions.dateRange())}
         title={'Date Range'}
-        style={{width: 160, marginBottom: 15}}
+        buttonStyle={{width: 160, marginBottom: 15}}
       />
 
       <Button
         onPress={debounce(() => Actions.selectBox())}
         title={'Select Box'}
-        style={{width: 160, marginBottom: 15}}
+        buttonStyle={{width: 160, marginBottom: 15}}
       />
       <Button
         onPress={debounce(() => Actions.dataTable())}
-        title={'Date Table'}
-        style={{width: 160, marginBottom: 15}}
+        title={'Data Table'}
+        buttonStyle={{width: 160, marginBottom: 15}}
       />
       <Button
         onPress={debounce(() => Actions.infoBox())}
         title={'Info Box'}
-        style={{width: 160, marginBottom: 15}}
+        buttonStyle={{width: 160, marginBottom: 15}}
       />
       <Button
         onPress={debounce(() => Actions.rightMenu())}
         title={'Right Menu'}
-        style={{width: 160, marginBottom: 15}}
+        buttonStyle={{width: 160, marginBottom: 15}}
       />
       <Button
         onPress={debounce(() => Actions.slider())}
         title={'Slider'}
-        style={{width: 160, marginBottom: 15}}
+        buttonStyle={{width: 160, marginBottom: 15}}
+      />
+      <Button
+        onPress={debounce(() => Actions.barChart())}
+        title={'BarChart'}
+        buttonStyle={{width: 160, marginBottom: 15}}
       />
     </SafeAreaView>
   );

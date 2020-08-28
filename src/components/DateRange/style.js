@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import {Platform, StyleSheet} from 'react-native';
 import {colors} from 'config';
 
 export const styles = StyleSheet.create({
@@ -14,5 +14,8 @@ export const styles = StyleSheet.create({
     backgroundColor: '#f5f5f5',
     color: '#666666',
     padding: 3,
+  },
+  dropdown_2_dropdown: {
+    marginTop: Platform.OS === 'ios' ? 3 : -20,
   },
 });

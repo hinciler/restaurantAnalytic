@@ -8,6 +8,7 @@ import DataTable from './DataTable';
 import InfoBox from './InfoBox';
 import RightMenu from './RightMenu';
 import Slider from './Slider';
+import BarChart from './BarChart';
 
 export {
   Tabs,
@@ -20,4 +21,5 @@ export {
   InfoBox,
   RightMenu,
   Slider,
+  BarChart,
 };

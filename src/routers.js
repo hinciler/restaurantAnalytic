@@ -10,6 +10,7 @@ import {
   InfoBox,
   RightMenu,
   Slider,
+  BarChart,
 } from 'components';
 
 const stateHandler = (prevState, newState, action) => {
@@ -31,6 +32,7 @@ const router = () => (
         <Scene component={InfoBox} key="infoBox" />
         <Scene component={RightMenu} key="rightMenu" />
         <Scene component={Slider} key="slider" />
+        <Scene component={BarChart} key="barChart" />
       </Modal>
     </Overlay>
   </Router>

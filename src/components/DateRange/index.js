@@ -24,6 +24,7 @@ export default function () {
           style={styles.dropdown_3}
           options={DEMO_OPTIONS_1}
           modalType={DateRange}
+          dropdownStyle={styles.dropdown_2_dropdown}
           defaultValue={
             <View
               style={{

@@ -23,7 +23,8 @@
     "prop-types": "^15.7.2",
     "react": "16.13.1",
     "react-native": "0.63.2",
-    "react-native-device-info": "^5.6.3",
+    "react-native-charts-wrapper": "^0.5.7",
+    "react-native-device-info": "^5.6.5",
     "react-native-elements": "^2.1.0",
     "react-native-gesture-handler": "^1.7.0",
     "react-native-modal-datetime-picker": "^8.9.3",
@@ -38,7 +39,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",
-    "@babel/runtime": "^7.8.4",
+    "@babel/runtime": "^7.11.2",
     "@react-native-community/eslint-config": "^1.1.0",
     "babel-jest": "^25.1.0",
     "eslint": "^6.5.1",

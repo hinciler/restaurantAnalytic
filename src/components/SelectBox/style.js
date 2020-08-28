@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Platform} from 'react-native';
 
 export const styles = StyleSheet.create({
   dropdown_3: {
@@ -12,6 +12,6 @@ export const styles = StyleSheet.create({
   dropdown_2_dropdown: {
     width: 180,
     marginLeft: -10,
-    marginTop: 3,
+    marginTop: Platform.OS === 'ios' ? 3 : -20,
   },
 });
