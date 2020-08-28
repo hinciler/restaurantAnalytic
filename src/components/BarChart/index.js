@@ -36,10 +36,16 @@ class BarChartScreen extends React.Component {
             ],
             label: 'Bar dataSet',
             config: {
-              color: processColor('teal'),
+              colors: [
+                processColor('#689f38'),
+                processColor('#38649f'),
+                processColor('#389f99'),
+                processColor('#ee1043'),
+                processColor('#ff8f00'),
+              ],
               barShadowColor: processColor('lightgrey'),
               highlightAlpha: 90,
-              highlightColor: processColor('red'),
+              highlightColor: processColor('white'),
             },
           },
         ],
@@ -82,7 +88,7 @@ class BarChartScreen extends React.Component {
     return (
       <View style={{flex: 1}}>
         <Header rightIconName="close" onRightPress={Actions.pop} />
-        <View style={{height: 80}}>
+        <View style={{height: 50}}>
           <Text> selected entry</Text>
           <Text> {this.state.selectedEntry}</Text>
         </View>
@@ -95,7 +101,7 @@ class BarChartScreen extends React.Component {
             animation={{durationX: 2000}}
             legend={this.state.legend}
             gridBackgroundColor={processColor('#ffffff')}
-            visibleRange={{x: {min: 7, max: 7}}}
+            visibleRange={{x: {min: 5, max: 5}}}
             drawBarShadow={false}
             drawValueAboveBar={true}
             drawHighlightArrow={true}
@@ -112,7 +118,8 @@ class BarChartScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#fff',
+    marginBottom: 60,
   },
   chart: {
     flex: 1,

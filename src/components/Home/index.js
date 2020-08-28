@@ -49,6 +49,11 @@ const tabs = () => {
         title={'BarChart'}
         buttonStyle={{width: 160, marginBottom: 15}}
       />
+      <Button
+        onPress={debounce(() => Actions.pieChart())}
+        title={'PieChart'}
+        buttonStyle={{width: 160, marginBottom: 15}}
+      />
     </SafeAreaView>
   );
 };

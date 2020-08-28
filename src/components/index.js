@@ -9,6 +9,7 @@ import InfoBox from './InfoBox';
 import RightMenu from './RightMenu';
 import Slider from './Slider';
 import BarChart from './BarChart';
+import PieChart from './PieChart';
 
 export {
   Tabs,
@@ -22,4 +23,5 @@ export {
   RightMenu,
   Slider,
   BarChart,
+  PieChart,
 };

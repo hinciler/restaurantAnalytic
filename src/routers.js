@@ -11,6 +11,7 @@ import {
   RightMenu,
   Slider,
   BarChart,
+  PieChart,
 } from 'components';
 
 const stateHandler = (prevState, newState, action) => {
@@ -33,6 +34,7 @@ const router = () => (
         <Scene component={RightMenu} key="rightMenu" />
         <Scene component={Slider} key="slider" />
         <Scene component={BarChart} key="barChart" />
+        <Scene component={PieChart} key="pieChart" />
       </Modal>
     </Overlay>
   </Router>
